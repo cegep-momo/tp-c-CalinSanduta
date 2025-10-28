@@ -14,3 +14,9 @@ $ make
 
 Il contient 2 fichiers `books.txt`et `users.txt` que vous pouvez utilisez pour tester votre code.
 Pour ca il suffit de les copiers dans le repertoire `build` avec l'application `bibliotheque`
+
+# Veille technologique
+
+# Question 1: C++
+
+# Question 2: Options de developpement possible

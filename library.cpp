@@ -192,7 +192,50 @@ void Library::displayAllUsers() {
         cout << "------------------------------\n";
     }
 }
+// Display all books by title 
+void Library::displayAllBooksSortedByTitle() {
+    auto all = getAllBooks();
 
+    if (all.empty()) {
+        cout << "Aucun livre dans la bibliotheque.\n";
+        return;
+    }
+
+    sort(all.begin(), all.end(),
+        [](Book* a, Book* b) {
+            return a->getTitle() < b->getTitle();
+        }
+    );
+
+    cout << "\n=== LIVRES TRIES PAR TITRE ===\n";
+    for (auto* book : all) {
+        cout << "\n" << book->toString() << "\n";
+        cout << "---------------------------\n";
+    }
+}
+//Display all books by author
+void Library::displayAllBooksSortedByAuthor() {
+    auto all = getAllBooks();
+
+    if (all.empty()) {
+        cout << "Aucun livre dans la bibliotheque.\n";
+        return;
+    }
+
+    sort(all.begin(), all.end(),
+        [](Book* a, Book* b) {
+            if (a->getAuthor() == b->getAuthor())
+                return a->getTitle() < b->getTitle();
+            return a->getAuthor() < b->getAuthor();
+        }
+    );
+
+    cout << "\n=== LIVRES TRIES PAR AUTEUR ===\n";
+    for (auto* book : all) {
+        cout << "\n" << book->toString() << "\n";
+        cout << "---------------------------\n";
+    }
+}
 // Statistics
 int Library::getTotalBooks() const { return books.size(); }
 int Library::getAvailableBookCount() const {

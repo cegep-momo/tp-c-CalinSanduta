@@ -41,6 +41,8 @@ public:
     void displayAllBooks();
     void displayAvailableBooks();
     void displayAllUsers();
+    void displayAllBooksSortedByTitle();
+    void displayAllBooksSortedByAuthor();
     
     // Statistics
     int getTotalBooks() const;
